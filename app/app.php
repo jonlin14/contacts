@@ -33,6 +33,19 @@
     $app->post("/confirm", function() use ($app){
         return $app['twig']->render('confirm.twig');
     });
-    
+
+    $app->post("/edit_name", function() use ($app){
+            return $app['twig']->render('edit_name.twig');
+    });
+
+    $app->post("/edit_phone", function() use ($app){
+            return $app['twig']->render("edit_phone");
+
+    });
+
+    $app->post("/edit_address", function() use ($app){
+            return $app['twig']->render("edit_address");
+    });
+
     return $app;
 ?>
