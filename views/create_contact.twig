@@ -1,11 +1,13 @@
 <html>
-<head>
-  <title>You have created a contact</title>
-</head>
-<body>
-  <p>Here is the description of the contact you added</p>
-  <p>Name: {{ newContact.getName() }}, Number : {{ newContact.getNumber()}}</p>
-
-  <p><a href="/">Click here to go home</a>
-</body>
+    <head>
+        <title>You have created a contact</title>
+    </head>
+    <body>
+        <p>You have created a contact!</p>
+        <p>Here is the description of the contact you added:</p>
+        <p>Name: {{ newContact.getName() }},
+           Number : {{ newContact.getNumber()}},
+           Address : {{ newContact.getAddress()}}</p>
+        <p><a href="/">Click here to go home</a>
+    </body>
 </html>

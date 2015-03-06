@@ -3,12 +3,23 @@
   {
     private $name;
     private $phone_number;
+    private $address;
 
 
-    function __construct($new_name, $new_number)
+    function __construct($new_name, $new_number, $new_address)
     {
       $this->name=$new_name;
       $this->phone_number=$new_number;
+      $this->address = $new_address;
+    }
+
+    function setAddress($new_address)
+    {
+      $this->address = $new_address;
+    }
+    function getAddress()
+    {
+      return $this->address;
     }
 
     function setNumber($new_number)
