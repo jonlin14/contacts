@@ -4,23 +4,24 @@
     </head>
     <body>
       <form action='/create_contact' method='post'>
-          <label for = 'contact_name'>Enter your contact name</label>
+          <label for = 'contact_name'>Enter Contact Name:&nbsp&nbsp&nbsp&nbsp</label>
           <input id = 'contact_name' name = 'contact_name' type = 'text'>
           <br>
-          <label for = 'phone_number'>Enter phone number</label>
+          <label for = 'phone_number'>Enter Contact Number:</label>
           <input id = 'phone_number' name = 'phone_number' type = 'number'>
           <br>
-          <label for ='address'>Enter your Address</label>
+          <label for ='address'>Enter Contact Address:</label>
           <input id = 'address' name = 'address' type = 'text'>
           <br>
-          <button type = 'submit'>Go!</button>
+          <button type = 'submit'>Add Contact</button>
       </form>
       <form action='/delete' method='post'>
-          <button type = 'submit' class = 'btn'></button>
+          <button type = 'submit' class = 'btn'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
       </form>
 
-      <p>Here are all the contacts you've submitted!</p>
+
           {% if contacts is not empty %}
+              <p>Current Contacts:</p>
               {% for contact in contacts %}
                   <p>Name: {{ contact.getName}}</p>
                       <ul>
@@ -28,6 +29,8 @@
                           <li>Address : {{ contact.getAddress}} </li>
                         </ul>
               {% endfor %}
+          {% else %}
+              <p>You have no current contacts</p>
           {% endif %}
 
         </body>
