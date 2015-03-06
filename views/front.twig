@@ -3,10 +3,17 @@
     <title>Add a contact!</title>
   </head>
   <body>
-    <form action = "create_contact" method = "post">
-      <label for = "contact_name">Enter your contact name</label>
-      <input id = "contact_name" name = "contact_name" type = "text">
-      <button type = "submit" class = "btn">Go!</button>
+    <form action='/create_contact' method='post'>
+      <label for = 'contact_name'>Enter your contact name</label>
+      <input id = 'contact_name' name = 'contact_name' type = 'text'>
+      <label for = 'phone_number'>Enter phone number</label>
+      <input id = 'phone_number' name = 'phone_number' type = 'number'>
+      <button type = 'submit'>Go!</button>
+    </form>
+
+    <form action="/delete" method="post">
+
+      <button type = 'submit'>Delete!</button>
     </form>
 
   </body>

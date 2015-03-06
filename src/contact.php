@@ -2,10 +2,18 @@
   class Contact
   {
     private $name;
+    private $phone_number;
 
-    function __construct($new_name)
+
+    function __construct($new_name, $new_number)
     {
       $this->name=$new_name;
+      $this->phone_number=$new_number;
+    }
+
+    function setNumber($new_number)
+    {
+      $this->phone_number = $new_number;
     }
 
     function setName($new_name)
@@ -16,12 +24,20 @@
     {
       return $this->name;
     }
-    function getAll()
+    function getNumber()
     {
-      return $_SESSION('list_of_contacts');
+      return $this->phone_number;
     }
-    function deleteALL()
+    static function getAll()
     {
-      $_SESSION('list_of_contacts') = array ();
+      return $_SESSION['list_of_contacts'];
+    }
+    static function deleteALL()
+    {
+      $_SESSION['list_of_contacts'] = array ();
+    }
+    function save()
+    {
+      array_push($_SESSION['list_of_contacts'], $this);
     }
   }
