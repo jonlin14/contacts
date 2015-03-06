@@ -25,10 +25,14 @@
         return $app['twig']->render('create_contact.twig', array('newContact' => $contact));
     });
 
-    $app->post("/delete", function() use ($app){
+    $app->get("/delete", function() use ($app){
         Contact::deleteAll();
         return $app['twig']->render('delete_contact.twig');
     });
 
+    $app->post("/confirm", function() use ($app){
+        return $app['twig']->render('confirm.twig');
+    });
+    
     return $app;
 ?>
