@@ -16,5 +16,12 @@
     {
       return $this->name;
     }
-    
+    function getAll()
+    {
+      return $_SESSION('list_of_contacts');
+    }
+    function deleteALL()
+    {
+      $_SESSION('list_of_contacts') = array ();
+    }
   }
