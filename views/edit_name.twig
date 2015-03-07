@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>Edit the contact information</title>
+    </head>
+    <body>
+        <p>Here is the current name: {{ newContact.getName()}}
+        <form action = "/editted_name" method = "post">
+        <label for = "new_name">Enter the new name</label>
+        <input id = "new_name" name = "new_name" type = "new_name">
+        <button type ="submit">Go!</button>
+    </form>
+    </body>
+</html>

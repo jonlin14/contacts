@@ -34,8 +34,15 @@
         return $app['twig']->render('confirm.twig');
     });
 
-    $app->post("/edit_name", function() use ($app){
-            return $app['twig']->render('edit_name.twig');
+    $app->get("/edit_name", function() use ($app){
+        $contact = $_SESSION['list_of_contacts'][0];
+            return $app['twig']->render('edit_name.twig', array('newContact' => $contact));
+    });
+
+    $app->post("/editted_name", function() use ($app){
+        $contact = $_SESSION['list_of_contacts'][0];
+            $contact->setName($_POST['new_name']);
+            return $app['twig']->render('editted_name', array('edittedContact' => $contact));
     });
 
     $app->post("/edit_phone", function() use ($app){
@@ -46,6 +53,7 @@
     $app->post("/edit_address", function() use ($app){
             return $app['twig']->render("edit_address");
     });
+
 
     return $app;
 ?>
